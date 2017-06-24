@@ -1,7 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="caelum" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<link href="../css/jquery.css" rel="stylesheet">
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui.js"></script>
+
 <title>Form</title>
 <style>
 
@@ -51,9 +58,9 @@
 </style>
 </head>
 <body>
+<c:import url="../jsp/cabecalho.jsp"/>
 	<h1>Adiciona Contatos</h1>
-	<hr/>
-	
+	<hr/>	
 	<form action="adicionaContato" method="post" class="form">
 		<label for="nome" class="text">Nome:</label>
 		<input type="text" name="nome" class="text input"/>
@@ -65,9 +72,10 @@
 		<input type="text" name="endereco" class="text input"/>
 		
 		<label for="dataNascimento" class="text">Data Nascimento:</label>
-		<input type="text" name="dataNascimento" class="text input"/>
+		<caelum:campoData id="dataNascimento" cla="text input"/><br/>
 		
 		<input type="submit" value="Gravar" class="button"/>
 	</form>
+<c:import url="../jsp/rodape.jsp"/>
 </body>
 </html>
